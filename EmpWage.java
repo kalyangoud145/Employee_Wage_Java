@@ -1,33 +1,40 @@
-public class EmpWage
+
+public class EmployeeWage 
 {
-   public static void main(String [] args)
-   {
-      System.out.println("Welcome to Employee Wage Computation program");
-		int salary,empRatePerHr=20,empHrs,totalSalary=0,day=1;
-		int maxWorkingHrs=100,maxWorkDays=20,totalEmpHrs=1;
-		final int IS_FULL_TIME = 1;
-	   final int IS_PART_TIME = 2;
-		while(totalEmpHrs <= maxWorkingHrs && day <= maxWorkDays)
+	final int IS_FULL_TIME = 1;
+    final int IS_PART_TIME = 2;
+    int salary,empRatePerHr=20, totalSalary=0;
+    public  int computeEmpWage() 
+	{
+		int empHrs =0;
+		int totalEmpHrs =0;
+		int totalWorkingDays = 0;
+		int maxHrPerMonth=100;
+		int numberOfWorkingDays=20;
+		while (totalEmpHrs <=maxHrPerMonth && totalWorkingDays <= numberOfWorkingDays)
 		{
-		double empCheck=Math.floor(Math.random()*10)%3;
-		switch ((int) empCheck)
+			totalWorkingDays++;
+			double empCheck = Math.floor(Math.random()*10)%3;
+			switch ((int) empCheck)
 			{
 			case IS_FULL_TIME:
-					empHrs=8;
-					break;
-			case IS_PART_TIME :
-					empHrs=4;
-					break;
+				empHrs=8;
+				break;
+			case IS_PART_TIME:
+				empHrs=4;
+				break;
 			default:
-         		empHrs=0;
-					break;
+				empHrs=0;
 			}
-		totalEmpHrs=totalEmpHrs+empHrs;
-		salary=empHrs*empRatePerHr;
-      totalSalary +=  salary;
-		day++;
+			totalEmpHrs=totalEmpHrs+empHrs;
+			salary=empHrs*empRatePerHr;
+	        totalSalary +=  salary;
 		}
-		System.out.println("Total salary:"+totalSalary);
-   }
+		return totalSalary;
+		}
+    public static void main(String[] args) {
+    	EmployeeWage obj =new EmployeeWage();
+    	System.out.println("The total Employee Wage: "+obj.computeEmpWage());
+    }
 }
 
