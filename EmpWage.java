@@ -3,30 +3,31 @@ public class EmpWage
    public static void main(String [] args)
    {
       System.out.println("Welcome to Employee Wage Computation program");
-		int IS_FULLTIME=1,IS_PARTTIME=2,salary,empRatePerHr=20,empHrs,numWorkingDays=20,totalsalary=0,day=1;
-		int maxworkinghrs=100,maxworkdays=20,totalemphrs=1;
-		while(totalemphrs <= maxworkinghrs && day <= maxworkdays)
+		int salary,empRatePerHr=20,empHrs,totalSalary=0,day=1;
+		int maxWorkingHrs=100,maxWorkDays=20,totalEmpHrs=1;
+		final int IS_FULL_TIME = 1;
+	   final int IS_PART_TIME = 2;
+		while(totalEmpHrs <= maxWorkingHrs && day <= maxWorkDays)
 		{
 		double empCheck=Math.floor(Math.random()*10)%3;
-		int empcheck=(int) empCheck;
-		switch (empcheck)
+		switch ((int) empCheck)
 			{
-			case 1:
+			case IS_FULL_TIME:
 					empHrs=8;
 					break;
-			case 2:
+			case IS_PART_TIME :
 					empHrs=4;
 					break;
 			default:
          		empHrs=0;
 					break;
 			}
-		totalemphrs=totalemphrs+empHrs;
+		totalEmpHrs=totalEmpHrs+empHrs;
 		salary=empHrs*empRatePerHr;
-      totalsalary=totalsalary + salary;
+      totalSalary +=  salary;
 		day++;
 		}
-		System.out.println("Total salary:"+totalsalary);
+		System.out.println("Total salary:"+totalSalary);
    }
 }
 
