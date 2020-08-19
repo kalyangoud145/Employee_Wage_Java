@@ -1,7 +1,7 @@
 
 public class EmployeeWage 
 {
-	final int IS_FULL_TIME = 1;
+    final int IS_FULL_TIME = 1;
     final int IS_PART_TIME = 2;
     int salary,empRatePerHr=20, totalSalary=0;
     public  int computeEmpWage() 
@@ -32,7 +32,7 @@ public class EmployeeWage
 		}
 		return totalSalary;
 		}
-    public static void main(String[] args) {
+    	public static void main(String[] args) {
     	EmployeeWage obj =new EmployeeWage();
     	System.out.println("The total Employee Wage: "+obj.computeEmpWage());
     }
